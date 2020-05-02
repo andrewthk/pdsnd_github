@@ -38,6 +38,7 @@ def get_filters():
     while day not in ('all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'):
         day = input("Please enter valid day name: ").lower()
 
+    # this print is used throughout and provides a border between each set of outputs.
     print('-'*40)
     return city, month, day
 
