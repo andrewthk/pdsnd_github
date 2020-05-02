@@ -24,3 +24,5 @@ washington.csv
 3. The solution to extract frequent combination of start and end stations in the station_stats() method was derived from:
 https://knowledge.udacity.com/questions/74297
    ie: common_stations = df.groupby(['Start Station','End Station']).size().nlargest(1)
+
+4. Udacity Version Control course for training on how to use Git and GitHub
