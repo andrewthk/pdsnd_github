@@ -111,16 +111,13 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-    common_start_station = df['Start Station'].mode()[0]
-    print("The most common start station is: {}".format(common_start_station))
+    print("The most common start station is: {}".format(df['Start Station'].mode()[0]))
     # display most commonly used end station
-    common_end_station = df['End Station'].mode()[0]
-    print("The most common end station is: {}".format(common_end_station))
+    print("The most common end station is: {}".format(df['End Station'].mode()[0]))
 
     # Using groupby to get frequent combination of start station and end station trip. Solution found from Udacity Mentor Help as documented in readme.txt
-    common_stations = df.groupby(['Start Station','End Station']).size().nlargest(1)
     # display most frequent combination of start station and end station trip
-    print("The most common start and end station combination is: \n {}".format(common_stations))
+    print("The most common start and end station combination is: \n {}".format(df.groupby(['Start Station','End Station']).size().nlargest(1)))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -187,7 +184,7 @@ def main():
         #continue asking user if they want to see next 5 rows until user input != yes
         while raw_data == 'yes':
             print( df.iloc[0:5,:] ) #print first/next 5 rows
-            df = df.iloc[5:,:]      #slice out the 5 rows printed above so next 5 can be printed. DataFrame gets smaller for efficiency and error won't occur when end is reached. 
+            df = df.iloc[5:,:]      #slice out the 5 rows printed above so next 5 can be printed. DataFrame gets smaller for efficiency and error won't occur when end is reached.
             raw_data = input('\nWould you like to see the next 5 rows? Enter yes or no: ').lower()
             print()
 
