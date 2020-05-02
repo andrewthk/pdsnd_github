@@ -1,3 +1,5 @@
+# Adding additional comment line for Version Control project.
+
 import time
 import pandas as pd
 import numpy as np
@@ -187,7 +189,7 @@ def main():
         #continue asking user if they want to see next 5 rows until user input != yes
         while raw_data == 'yes':
             print( df.iloc[0:5,:] ) #print first/next 5 rows
-            df = df.iloc[5:,:]      #slice out the 5 rows printed above so next 5 can be printed. DataFrame gets smaller for efficiency and error won't occur when end is reached. 
+            df = df.iloc[5:,:]      #slice out the 5 rows printed above so next 5 can be printed. DataFrame gets smaller for efficiency and error won't occur when end is reached.
             raw_data = input('\nWould you like to see the next 5 rows? Enter yes or no: ').lower()
             print()
 
